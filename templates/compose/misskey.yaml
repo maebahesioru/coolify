@@ -10,13 +10,9 @@ services:
     image: misskey/misskey:latest
     environment:
       - MISSKEY_URL=${SERVICE_URL_MISSKEY_3000}
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
       - DATABASE_DB=${POSTGRES_DB:-misskey}
       - DATABASE_USER=${SERVICE_USER_POSTGRESQL}
       - DATABASE_PASSWORD=${SERVICE_PASSWORD_POSTGRESQL}
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
     volumes:
       - type: bind
         source: ./config.yml
